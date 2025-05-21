@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aryabhakti Web Library</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #6200ea;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .book-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .book-card:hover {
+      transform: scale(1.01);
+    }
+    .book-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .book-author {
+      color: #666;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aryabhakti Web Library</h1>
+    <p>Your Digital Shelf of Knowledge</p>
+  </header>
+  <div class="container" id="library">
+    <!-- Books will be inserted here by JavaScript -->
+  </div>
+
+  <script>
+    const books = [
+      {
+        title: "Bhagavad Gita: As It Is",
+        author: "A.C. Bhaktivedanta Swami Prabhupada"
+      },
+      {
+        title: "Ramayana",
+        author: "Valmiki"
+      },
+      {
+        title: "Mahabharata",
+        author: "Ved Vyasa"
+      },
+      {
+        title: "The Upanishads",
+        author: "Various Sages"
+      },
+      {
+        title: "Srimad Bhagavatam",
+        author: "Vyasa Muni"
+      }
+    ];
+
+    const libraryDiv = document.getElementById('library');
+
+    books.forEach(book => {
+      const bookCard = document.createElement('div');
+      bookCard.className = 'book-card';
+
+      bookCard.innerHTML = `
+        <div class="book-title">${book.title}</div>
+        <div class="book-author">by ${book.author}</div>
+      `;
+
+      libraryDiv.appendChild(bookCard);
+    });
+  </script>
+</body>
+</html>
